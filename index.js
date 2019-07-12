@@ -27,7 +27,8 @@ const createRegions = async () => {
     const cleanedRegions = regions.map(region => {
       const { toponymName, adminName1 } = region;
       return {
-        name: adminName1
+        toponymName,
+        adminName1
       };
     });
     const outputPath = path.join(__dirname, "dist", "region", regionFilename);
