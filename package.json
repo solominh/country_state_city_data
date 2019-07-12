@@ -1,8 +1,11 @@
 {
   "name": "country-state-city-data",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Country State City Data",
   "main": "index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
