@@ -1,5 +1,5 @@
 {
-  "name": "country_state_city_data",
+  "name": "country-state-city-data",
   "version": "1.0.0",
   "description": "Country State City Data",
   "main": "index.js",
