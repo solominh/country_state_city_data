@@ -1,0 +1,19 @@
+{
+  "name": "country_state_city_data",
+  "version": "1.0.0",
+  "description": "Country State City Data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solominh/country_state_city_data.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solominh/country_state_city_data/issues"
+  },
+  "homepage": "https://github.com/solominh/country_state_city_data#readme"
+}
