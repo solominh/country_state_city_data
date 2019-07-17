@@ -6,9 +6,10 @@ const createCountries = async () => {
   const countries = await fs.readJson(countriesFile);
 
   const cleanedCountries = countries.map(item => {
-    const { country, Languages } = item;
+    const { country, ISO } = item;
     return {
-      country
+      country,
+      ISO
     };
   });
 
@@ -25,14 +26,18 @@ const createRegions = async () => {
     const inputPath = path.join(regionDir, regionFilename);
     const { country_data, regions = [] } = await fs.readJson(inputPath);
     const cleanedRegions = regions.map(region => {
-      const { toponymName, adminName1 } = region;
+      const { toponymName, adminName1, adminCode1 } = region;
       return {
         toponymName,
-        adminName1
+        adminName1,
+        adminCode1
       };
     });
     const outputPath = path.join(__dirname, "dist", "region", regionFilename);
-    await fs.outputJson(outputPath, { country_data, regions: cleanedRegions });
+    await fs.outputJson(outputPath, {
+      // country_data,
+      regions: cleanedRegions
+    });
   });
 
   await Promise.all(promises);
@@ -54,7 +59,7 @@ const createCities = async () => {
         inputPath
       );
       const cleanedCities = cities.map(city => {
-        const { name, asciiname } = city;
+        const { name, asciiname, geonameid } = city;
         return {
           name,
           asciiname
@@ -68,8 +73,8 @@ const createCities = async () => {
         cityFilename
       );
       await fs.outputJson(outputPath, {
-        country_data,
-        region_data,
+        // country_data,
+        // region_data,
         cities: cleanedCities
       });
     });
